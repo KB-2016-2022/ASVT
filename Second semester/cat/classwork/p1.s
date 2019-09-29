@@ -1,8 +1,8 @@
 .globl _start
 .data
 msg:	.ascii "Ошибка!\n"
-maxfilelen = 2000000
 lmsg = . - msg
+maxfilelen = 2000000
 
 @ .byte	0x1b
 @ .ascii "[0m"			@ функцией 4 работать не будет
@@ -33,7 +33,7 @@ _start:
 @	mov 	r2, #maxfilelen 	@ ОШИБКА
 	ldr 	r2, =maxfilelen
 	svc 	#0
-	cmp 	r0, #0			@ Сравнивает r0 c -1
+	cmp 	r0, #0			
 	bgt 	1f			@ jump		f - forward
 	bl 	typeerror
 	b 	exit
