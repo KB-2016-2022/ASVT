@@ -45,7 +45,7 @@ int main()
         while(1)
         {
             memset(buf, 0, 1024);
-            bytes_read = recv(sock, buf, 1024, 0);
+            bytes_read = recv(sock, buf, 1, 0);
             printf("RECV\n");
             if(bytes_read <= 0) break;
             printf("%s\n", buf);
